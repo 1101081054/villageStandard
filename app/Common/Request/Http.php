@@ -3,8 +3,9 @@ namespace App\Common\Request;
 
 class Http{
 
+    private static $lastCookieFile = '';
 
-    public function postUrl($url, $postData = false, $header = false) {
+    public static function postUrl($url, $postData = false, $header = false) {
         $ch = curl_init($url);
         curl_setopt($ch,CURLOPT_HEADER,0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //返回数据不直接输出
@@ -23,7 +24,7 @@ class Http{
 
         //add 302 support
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch,CURLOPT_COOKIEFILE, $this->lastCookieFile); //使用提交后得到的cookie数据
+        curl_setopt($ch,CURLOPT_COOKIEFILE, static::$lastCookieFile); //使用提交后得到的cookie数据
 
         //add post data support
         if(!empty($postData)) {
@@ -47,7 +48,7 @@ class Http{
         return $content;
     }
 
-    public function getUrl($url, $header = false) {
+    public static function getUrl($url, $header = false) {
         $ch = curl_init($url);
         curl_setopt($ch,CURLOPT_HEADER,0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //返回数据不直接输出
@@ -66,7 +67,7 @@ class Http{
 
         //add 302 support
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch,CURLOPT_COOKIEFILE, $this->lastCookieFile); //使用提交后得到的cookie数据
+        curl_setopt($ch,CURLOPT_COOKIEFILE, static::$lastCookieFile); //使用提交后得到的cookie数据
 
         try {
             $content = curl_exec($ch); //执行并存储结果

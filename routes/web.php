@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    \Illuminate\Support\Facades\Log::alert('dasfoiebgoi', array('dfghjk', 'BHNJMK'));
     return view('welcome');
 });
+
+Route::get('testApi', 'TestController@testApi');
+Route::get('test', 'TestController@test');
+
+
+require_once 'api.php';
