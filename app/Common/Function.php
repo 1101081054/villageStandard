@@ -1,4 +1,5 @@
 <?php
+
 function Json($data = null, $msg = '', $code = 2000){
     $content = array(
         'code' => $code,
@@ -7,3 +8,4 @@ function Json($data = null, $msg = '', $code = 2000){
     );
     return response()->json($content);
 }
+
