@@ -467,6 +467,7 @@ class ComposerStaticInit9aa269123d7b88d1f0244c1423f50b06
     );
 
     public static $classMap = array (
+        'App\\Common\\Rabbitmq\\Rabbitmq' => __DIR__ . '/../..' . '/app/Common/Rabbitmq/Rabbitmq.php',
         'App\\Common\\Request\\Http' => __DIR__ . '/../..' . '/app/Common/Request/Http.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

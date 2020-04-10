@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Common\Request\Http;
+use App\Common\Rabbitmq\Rabbitmq;
 
 class TestController extends Controller{
     public function test(){
@@ -15,6 +16,10 @@ class TestController extends Controller{
 
 
     public function testApi(){
-        return response()->json([123,456,7489,123]);
+        return Json([123,456,7489,123]);
+    }
+
+    public function rabbitmq(){
+        new Rabbitmq();
     }
 }

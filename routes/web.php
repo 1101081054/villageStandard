@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('testApi', 'TestController@testApi');
 Route::get('test', 'TestController@test');
+Route::get('rabbitmq', 'TestController@rabbitmq');
 
 
 require_once 'api.php';
