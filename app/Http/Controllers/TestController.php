@@ -16,7 +16,7 @@ class TestController extends Controller{
 
 
     public function testApi(){
-        return response()->json([123,456,7489,123]);
+        return Json([123,456,7489,123]);
     }
 
     public function rabbitmq(){

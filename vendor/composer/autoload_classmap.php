@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Common\\Rabbitmq\\Rabbitmq' => $baseDir . '/app/Common/Rabbitmq/Rabbitmq.php',
     'App\\Common\\Request\\Http' => $baseDir . '/app/Common/Request/Http.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
